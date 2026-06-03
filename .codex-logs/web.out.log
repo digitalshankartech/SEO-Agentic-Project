@@ -1,0 +1,24 @@
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m816[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+[2m5:56:03 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/CompetitorAnalysis.jsx, /src/index.css[22m
+[2m6:00:43 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/CompetitorAnalysis.jsx, /src/index.css[22m
+[2m6:01:14 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/CompetitorAnalysis.jsx, /src/index.css[22m
+[2m6:02:43 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/CompetitorAnalysis.jsx, /src/index.css[22m
+[2m6:05:12 pm[22m [36m[1m[vite][22m[39m changed tsconfig file detected: C:\code\Office\SEO Agentic Project\apps\web\tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Layout.jsx, /src/index.css[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ModelSelector.jsx, /src/index.css[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/OutputCard.jsx, /src/index.css[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Sidebar.jsx, /src/index.css[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/CROAnalyzer.jsx, /src/pages/Copywriter.jsx, /src/pages/ContentStrategy.jsx, /src/pages/EmailBuilder.jsx, /src/pages/SEOAudit.jsx, /src/pages/CompetitorAnalysis.jsx, /src/pages/SEOAEOMissingAnalysis.jsx[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/CompetitorAnalysis.jsx, /src/index.css[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/StreamOutput.jsx, /src/index.css[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/CROAnalyzer.jsx, /src/pages/Copywriter.jsx, /src/pages/ContentStrategy.jsx, /src/pages/EmailBuilder.jsx, /src/pages/SEOAudit.jsx, /src/pages/CompetitorAnalysis.jsx[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m changed tsconfig file detected: C:\code\Office\SEO Agentic Project\apps\web\tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/OutputCard.jsx[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SEOAEOMissingAnalysis.jsx, /src/index.css[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/OutputCard.jsx[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/CROAnalyzer.jsx, /src/pages/Copywriter.jsx, /src/pages/ProductContext.jsx, /src/pages/Dashboard.jsx, /src/pages/ContentStrategy.jsx, /src/pages/EmailBuilder.jsx, /src/pages/SEOAudit.jsx, /src/pages/CompetitorAnalysis.jsx, /src/components/Sidebar.jsx, /src/components/ModelSelector.jsx[22m
+[2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SEOAudit.jsx, /src/index.css[22m
