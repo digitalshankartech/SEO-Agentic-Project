@@ -10,12 +10,12 @@ const TAG_COLORS = {
 
 export default function ToolHeader({ icon, title, description, badge }) {
   return (
-    <div className="pb-6 border-b border-gray-200">
+    <div className="pb-6 border-b border-border">
       <div className="flex items-start gap-3">
         <span className="text-3xl mt-0.5">{icon}</span>
         <div className="flex-1">
           <div className="flex items-center gap-2 flex-wrap">
-            <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
+            <h1 className="text-2xl font-bold text-foreground">{title}</h1>
             {badge && (
               <span
                 className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${
@@ -27,7 +27,7 @@ export default function ToolHeader({ icon, title, description, badge }) {
             )}
           </div>
           {description && (
-            <p className="text-gray-500 text-sm mt-1">{description}</p>
+            <p className="text-muted-foreground text-sm mt-1">{description}</p>
           )}
         </div>
       </div>

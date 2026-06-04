@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import StreamOutput from './StreamOutput';
 import { exportToHtml, copyAsWordPress } from '../lib/export';
+import { exportAnalysisPptx } from '../lib/pptx';
 
 // ─── Setup instructions shown after each export action ───────────────────────
 
@@ -42,6 +43,8 @@ function SetupSteps({ steps, color }) {
 export default function OutputCard({ title, content, isStreaming, placeholder }) {
   const [copied, setCopied]       = useState(false);
   const [exported, setExported]   = useState(false);
+  const [pdfExported, setPdfExported] = useState(false);
+  const [pptExported, setPptExported] = useState(false);
   const [wpCopied, setWpCopied]   = useState(false);
   const [showPanel, setShowPanel] = useState(null); // 'html' | 'wp' | null
 
@@ -65,20 +68,38 @@ export default function OutputCard({ title, content, isStreaming, placeholder })
     setTimeout(() => setWpCopied(false), 2000);
   }
 
+  function handlePdf() {
+    setPdfExported(true);
+    window.print();
+    setTimeout(() => setPdfExported(false), 2000);
+  }
+
+  async function handlePpt() {
+    setPptExported(true);
+    try {
+      await exportAnalysisPptx(content, title);
+    } catch (error) {
+      console.error('PPTX export failed', error);
+      window.alert('PPTX export failed. Please try again.');
+    } finally {
+      setPptExported(false);
+    }
+  }
+
   const hasOutput = !!content && !isStreaming;
 
   return (
-    <div className="mt-8 bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+    <div className="mt-8 overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-sm">
       {/* Card header */}
-      <div className="flex items-center justify-between px-6 py-3 border-b border-gray-100 bg-gray-50 flex-wrap gap-2">
-        <h2 className="font-semibold text-gray-800 text-sm">{title}</h2>
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-muted px-6 py-3">
+        <h2 className="text-sm font-semibold text-foreground">{title}</h2>
 
         {hasOutput && (
           <div className="flex items-center gap-2 flex-wrap">
             {/* Copy raw */}
             <button
               onClick={handleCopy}
-              className="text-xs text-gray-500 hover:text-gray-800 border border-gray-200 bg-white hover:bg-gray-50 px-3 py-1.5 rounded-lg transition-colors"
+              className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {copied ? '✓ Copied' : 'Copy text'}
             </button>
@@ -86,16 +107,31 @@ export default function OutputCard({ title, content, isStreaming, placeholder })
             {/* Export HTML */}
             <button
               onClick={handleExportHtml}
-              className="text-xs font-medium text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5"
+              className="flex items-center gap-1.5 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-xs font-medium text-indigo-700 transition-colors hover:bg-indigo-100"
             >
               <span>⬇</span>
               {exported ? 'Downloading…' : 'Export HTML'}
             </button>
 
+            <button
+              onClick={handlePdf}
+              className="rounded-lg border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-medium text-red-700 transition-colors hover:bg-red-100"
+            >
+              {pdfExported ? 'Opening...' : 'PDF Download PDF'}
+            </button>
+
+            <button
+              onClick={handlePpt}
+              disabled={pptExported}
+              className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 transition-colors hover:bg-emerald-100"
+            >
+              {pptExported ? 'Downloading...' : 'Download PPTX'}
+            </button>
+
             {/* WordPress */}
             <button
               onClick={handleWordPress}
-              className="text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5"
+              className="flex items-center gap-1.5 rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100"
             >
               <span>🔵</span>
               {wpCopied ? '✓ Copied!' : 'WordPress Code'}
@@ -112,7 +148,7 @@ export default function OutputCard({ title, content, isStreaming, placeholder })
       {/* Setup Instructions Panel */}
       {hasOutput && showPanel && (
         <div className="px-6 pb-6">
-          <div className="border-t border-gray-100 pt-5">
+            <div className="border-t border-border pt-5">
             {/* Tab switcher */}
             <div className="flex gap-2 mb-3">
               <button
@@ -120,7 +156,7 @@ export default function OutputCard({ title, content, isStreaming, placeholder })
                 className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors ${
                   showPanel === 'html'
                     ? 'bg-indigo-600 text-white border-indigo-600'
-                    : 'text-gray-500 border-gray-200 hover:border-indigo-300'
+                    : 'text-muted-foreground border-border hover:border-indigo-300'
                 }`}
               >
                 ⬇ Export HTML — How to use
@@ -130,14 +166,14 @@ export default function OutputCard({ title, content, isStreaming, placeholder })
                 className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors ${
                   showPanel === 'wp'
                     ? 'bg-blue-600 text-white border-blue-600'
-                    : 'text-gray-500 border-gray-200 hover:border-blue-300'
+                    : 'text-muted-foreground border-border hover:border-blue-300'
                 }`}
               >
                 🔵 WordPress Code — How to use
               </button>
               <button
                 onClick={() => setShowPanel(null)}
-                className="ml-auto text-xs text-gray-400 hover:text-gray-600 px-2"
+                className="ml-auto px-2 text-xs text-muted-foreground hover:text-foreground"
               >
                 ✕ Close
               </button>

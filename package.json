@@ -8,8 +8,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently \"pnpm --filter @seo/api dev\" \"pnpm --filter @seo/web dev\"",
-    "build": "pnpm --filter @seo/api build && pnpm --filter @seo/web build",
+    "dev": "concurrently \"corepack pnpm --filter @seo/api dev\" \"corepack pnpm --filter @seo/web dev\"",
+    "start:local": "concurrently \"corepack pnpm --filter @seo/api dev\" \"corepack pnpm --filter @seo/web dev\"",
+    "build": "corepack pnpm --filter @seo/api build && corepack pnpm --filter @seo/web build",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "format": "prettier --write .",
     "prepare": "husky install"

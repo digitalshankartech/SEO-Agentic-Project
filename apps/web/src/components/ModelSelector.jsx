@@ -3,6 +3,13 @@ import { loadSelectedModel, saveSelectedModel } from '../lib/storage';
 
 const PROVIDERS = [
   {
+    id: 'cloudflare',
+    label: 'Cloudflare',
+    model: 'gpt-oss-120b',
+    color: 'text-yellow-400',
+    dot: 'bg-yellow-400',
+  },
+  {
     id: 'gemini',
     label: 'Gemini',
     model: 'gemini-1.5-flash',

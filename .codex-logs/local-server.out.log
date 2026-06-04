@@ -1,0 +1,28 @@
+
+> seo-agentic-platform@0.1.0 dev
+> concurrently "corepack pnpm --filter @seo/api dev" "corepack pnpm --filter @seo/web dev"
+
+[0] 
+[0] > @seo/api@0.1.0 dev C:\code\Office\SEO Agentic Project\apps\api
+[0] > node --loader ts-node/esm src/index.ts
+[0] 
+[1] 
+[1] > @seo/web@0.1.0 dev C:\code\Office\SEO Agentic Project\apps\web
+[1] > vite
+[1] 
+[1] Re-optimizing dependencies because lockfile has changed
+[1] 
+[1]   [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m1138[22m[2m[0m ms[22m
+[1] 
+[1]   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[1] [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[0] (node:16124) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+[0] --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));'
+[0] (Use `node --trace-warnings ...` to show where the warning was created)
+[0] 
+[0] ✦  SEO Agentic API  →  http://localhost:3001
+[0] (node:16124) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+[0] (Use `node --trace-deprecation ...` to show where the warning was created)
+[0] 
+[0]    Frontend (Vite)  →  http://localhost:5173
+[0] 

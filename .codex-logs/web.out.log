@@ -22,3 +22,19 @@
 [2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/OutputCard.jsx[22m
 [2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/CROAnalyzer.jsx, /src/pages/Copywriter.jsx, /src/pages/ProductContext.jsx, /src/pages/Dashboard.jsx, /src/pages/ContentStrategy.jsx, /src/pages/EmailBuilder.jsx, /src/pages/SEOAudit.jsx, /src/pages/CompetitorAnalysis.jsx, /src/components/Sidebar.jsx, /src/components/ModelSelector.jsx[22m
 [2m6:05:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SEOAudit.jsx, /src/index.css[22m
+[2m6:10:06 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/CompetitorAnalysis.jsx, /src/index.css[22m
+[2m6:15:06 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/CompetitorAnalysis.jsx[22m
+[2m6:15:55 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/CROAnalyzer.jsx, /src/pages/Copywriter.jsx, /src/pages/ProductContext.jsx, /src/pages/Dashboard.jsx, /src/pages/ContentStrategy.jsx, /src/pages/EmailBuilder.jsx, /src/pages/SEOAudit.jsx, /src/components/Sidebar.jsx, /src/components/ModelSelector.jsx, /src/pages/CompetitorAnalysis.jsx[22m
+[2m6:15:55 pm[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/components/ModelSelector.jsx[22m Could not Fast Refresh ("useSelectedModel" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m6:15:55 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/CROAnalyzer.jsx, /src/pages/Copywriter.jsx, /src/pages/ContentStrategy.jsx, /src/pages/EmailBuilder.jsx, /src/pages/SEOAudit.jsx, /src/components/Sidebar.jsx, /src/pages/CompetitorAnalysis.jsx[22m
+[2m6:23:13 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/lib/pptx.js[22m
+[2m6:23:55 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/OutputCard.jsx, /src/index.css[22m
+[2m6:24:53 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SEOAEOMissingAnalysis.jsx[22m
+[2m6:25:02 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m6:25:56 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Sidebar.jsx, /src/index.css[22m
+[2m6:26:21 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Sidebar.jsx[22m
+[2m6:26:29 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SEOAudit.jsx, /src/index.css[22m
+[2m6:27:35 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/SEOAudit.jsx[22m
+[2m6:35:03 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ModelSelector.jsx, /src/index.css[22m
+[2m6:35:03 pm[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/components/ModelSelector.jsx[22m Could not Fast Refresh ("useSelectedModel" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m6:35:03 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/CROAnalyzer.jsx, /src/pages/Copywriter.jsx, /src/pages/ContentStrategy.jsx, /src/pages/EmailBuilder.jsx, /src/pages/CompetitorAnalysis.jsx, /src/pages/SEOAEOMissingAnalysis.jsx, /src/components/Sidebar.jsx, /src/pages/SEOAudit.jsx[22m

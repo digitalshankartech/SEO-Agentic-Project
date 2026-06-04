@@ -8,6 +8,7 @@ import CROAnalyzer from './pages/CROAnalyzer';
 import EmailBuilder from './pages/EmailBuilder';
 import ContentStrategy from './pages/ContentStrategy';
 import CompetitorAnalysis from './pages/CompetitorAnalysis';
+import SEOAEOMissingAnalysis from './pages/SEOAEOMissingAnalysis';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="cro" element={<CROAnalyzer />} />
           <Route path="email" element={<EmailBuilder />} />
           <Route path="content" element={<ContentStrategy />} />
+          <Route path="competitor-gap" element={<SEOAEOMissingAnalysis />} />
           <Route path="competitor" element={<CompetitorAnalysis />} />
         </Route>
       </Routes>

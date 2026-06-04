@@ -3,18 +3,264 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --background: 241 245 249;
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --primary: 79 70 229;
+    --primary-foreground: 255 255 255;
+    --secondary: 226 232 240;
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
+    --border: 226 232 240;
+    --input: 203 213 225;
+    --ring: 99 102 241;
+    --destructive: 239 68 68;
+    --success: 34 197 94;
+    --warning: 245 158 11;
+    --info: 14 165 233;
+    --sidebar-background: 8 13 30;
+    --sidebar-foreground: 226 232 240;
+    --chart-grid: 226 232 240;
+    --chart-axis: 100 116 139;
+    --chart-tooltip: 255 255 255;
+    --chart-tooltip-foreground: 15 23 42;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark;
+    --background: 11 18 32;
+    --foreground: 226 232 240;
+    --card: 15 23 42;
+    --card-foreground: 241 245 249;
+    --primary: 129 140 248;
+    --primary-foreground: 15 23 42;
+    --secondary: 30 41 59;
+    --muted: 17 24 39;
+    --muted-foreground: 148 163 184;
+    --border: 51 65 85;
+    --input: 71 85 105;
+    --ring: 129 140 248;
+    --destructive: 248 113 113;
+    --success: 74 222 128;
+    --warning: 251 191 36;
+    --info: 56 189 248;
+    --sidebar-background: 4 9 22;
+    --sidebar-foreground: 226 232 240;
+    --chart-grid: 51 65 85;
+    --chart-axis: 203 213 225;
+    --chart-tooltip: 15 23 42;
+    --chart-tooltip-foreground: 241 245 249;
+  }
+
   html {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: rgb(var(--background));
+    color: rgb(var(--foreground));
   }
 
   body {
-    @apply bg-gray-50 text-gray-900;
+    min-height: 100vh;
+    background: rgb(var(--background));
+    color: rgb(var(--foreground));
+  }
+
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: rgb(var(--card));
+    color: rgb(var(--foreground));
+    border-color: rgb(var(--input));
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgb(var(--muted-foreground));
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus,
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid rgb(var(--ring));
+    outline-offset: 2px;
   }
 }
 
 @layer utilities {
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: #334155 transparent;
+    scrollbar-color: rgb(var(--border)) transparent;
+  }
+
+  .theme-card {
+    background-color: rgb(var(--card));
+    color: rgb(var(--card-foreground));
+    border-color: rgb(var(--border));
+  }
+
+  .theme-muted {
+    background-color: rgb(var(--muted));
+    color: rgb(var(--muted-foreground));
+  }
+}
+
+@layer utilities {
+  [data-theme='dark'] .bg-white,
+  [data-theme='dark'] .bg-gray-50,
+  [data-theme='dark'] .bg-slate-50,
+  [data-theme='dark'] .bg-slate-100 {
+    background-color: rgb(var(--card)) !important;
+  }
+
+  [data-theme='dark'] .bg-gray-100,
+  [data-theme='dark'] .bg-slate-200,
+  [data-theme='dark'] .bg-slate-900\/60,
+  [data-theme='dark'] .bg-slate-950\/60 {
+    background-color: rgb(var(--muted)) !important;
+  }
+
+  [data-theme='dark'] .text-gray-900,
+  [data-theme='dark'] .text-gray-800,
+  [data-theme='dark'] .text-gray-700,
+  [data-theme='dark'] .text-slate-950,
+  [data-theme='dark'] .text-slate-900,
+  [data-theme='dark'] .text-slate-800,
+  [data-theme='dark'] .text-slate-700,
+  [data-theme='dark'] .text-black {
+    color: rgb(var(--foreground)) !important;
+  }
+
+  [data-theme='dark'] .text-gray-600,
+  [data-theme='dark'] .text-gray-500,
+  [data-theme='dark'] .text-gray-400,
+  [data-theme='dark'] .text-slate-600,
+  [data-theme='dark'] .text-slate-500,
+  [data-theme='dark'] .text-slate-400 {
+    color: rgb(var(--muted-foreground)) !important;
+  }
+
+  [data-theme='dark'] .border-gray-100,
+  [data-theme='dark'] .border-gray-200,
+  [data-theme='dark'] .border-slate-100,
+  [data-theme='dark'] .border-slate-200,
+  [data-theme='dark'] .border-slate-300 {
+    border-color: rgb(var(--border)) !important;
+  }
+
+  [data-theme='dark'] .bg-indigo-50,
+  [data-theme='dark'] .bg-blue-50,
+  [data-theme='dark'] .bg-cyan-50 {
+    background-color: rgb(30 41 59 / 0.72) !important;
+  }
+
+  [data-theme='dark'] .bg-emerald-50,
+  [data-theme='dark'] .bg-green-50 {
+    background-color: rgb(6 78 59 / 0.35) !important;
+  }
+
+  [data-theme='dark'] .bg-amber-50,
+  [data-theme='dark'] .bg-orange-50,
+  [data-theme='dark'] .bg-yellow-50 {
+    background-color: rgb(120 53 15 / 0.35) !important;
+  }
+
+  [data-theme='dark'] .bg-red-50,
+  [data-theme='dark'] .bg-rose-50 {
+    background-color: rgb(127 29 29 / 0.35) !important;
+  }
+
+  [data-theme='dark'] .text-indigo-700,
+  [data-theme='dark'] .text-blue-700,
+  [data-theme='dark'] .text-cyan-700 {
+    color: rgb(165 180 252) !important;
+  }
+
+  [data-theme='dark'] .text-emerald-700,
+  [data-theme='dark'] .text-green-700 {
+    color: rgb(134 239 172) !important;
+  }
+
+  [data-theme='dark'] .text-amber-700,
+  [data-theme='dark'] .text-orange-700,
+  [data-theme='dark'] .text-yellow-700 {
+    color: rgb(253 230 138) !important;
+  }
+
+  [data-theme='dark'] .text-red-700,
+  [data-theme='dark'] .text-rose-700 {
+    color: rgb(254 202 202) !important;
+  }
+
+  [data-theme='dark'] input,
+  [data-theme='dark'] textarea,
+  [data-theme='dark'] select {
+    background-color: rgb(15 23 42) !important;
+    color: rgb(var(--foreground)) !important;
+    border-color: rgb(var(--input)) !important;
+  }
+
+  [data-theme='dark'] table,
+  [data-theme='dark'] th,
+  [data-theme='dark'] td {
+    border-color: rgb(var(--border)) !important;
+  }
+
+  [data-theme='dark'] th {
+    background-color: rgb(var(--muted)) !important;
+    color: rgb(var(--foreground)) !important;
+  }
+
+  [data-theme='dark'] tr:nth-child(even) td {
+    background-color: rgb(15 23 42 / 0.55) !important;
+  }
+
+  [data-theme='dark'] .recharts-cartesian-grid line,
+  [data-theme='dark'] .recharts-polar-grid-angle line,
+  [data-theme='dark'] .recharts-polar-grid-concentric path {
+    stroke: rgb(var(--chart-grid)) !important;
+  }
+
+  [data-theme='dark'] .recharts-cartesian-axis-tick text,
+  [data-theme='dark'] .recharts-polar-angle-axis-tick text,
+  [data-theme='dark'] .recharts-polar-radius-axis-tick text,
+  [data-theme='dark'] .recharts-label,
+  [data-theme='dark'] .recharts-legend-item-text {
+    color: rgb(var(--chart-axis)) !important;
+    fill: rgb(var(--chart-axis)) !important;
+  }
+
+  [data-theme='dark'] .recharts-default-tooltip {
+    background-color: rgb(var(--chart-tooltip)) !important;
+    border-color: rgb(var(--border)) !important;
+    color: rgb(var(--chart-tooltip-foreground)) !important;
+  }
+
+  [data-theme='dark'] .recharts-tooltip-label,
+  [data-theme='dark'] .recharts-tooltip-item {
+    color: rgb(var(--chart-tooltip-foreground)) !important;
+  }
+
+  @media print {
+    html,
+    body {
+      background: #ffffff !important;
+      color: #0f172a !important;
+    }
+
+    .bg-white,
+    .bg-gray-50,
+    .bg-slate-50,
+    .bg-slate-100 {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
   }
 }
